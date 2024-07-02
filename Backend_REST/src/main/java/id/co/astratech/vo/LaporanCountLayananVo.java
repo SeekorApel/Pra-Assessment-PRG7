@@ -19,4 +19,6 @@ public class LaporanCountLayananVo {
 
     private String jumlah;
 
+    private String totalHarga;
+
 }

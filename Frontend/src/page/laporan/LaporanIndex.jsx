@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { listLaporanCountLayanan } from "../../util/TransaksiService";
+import { formatRupiah } from "../../util/FormatRupiah";
 
 export default function LaporanIndex() {
   const [laporans, setLaporans] = useState([]);
@@ -26,6 +27,7 @@ export default function LaporanIndex() {
               <th>No</th>
               <th>Nama Layanan</th>
               <th>Jumlah Pesanan</th>
+              <th>Total Pendapatan</th>
             </tr>
           </thead>
           <tbody>
@@ -34,6 +36,7 @@ export default function LaporanIndex() {
                 <td>{index + 1}</td>
                 <td>{laporan.namaLayanan}</td>
                 <td>{laporan.jumlah}</td>
+                <td>{formatRupiah(laporan.totalHarga)}</td>
               </tr>
             ))}
           </tbody>

@@ -60,6 +60,7 @@ public class PenjualanSalonDaoImpl implements PenjualanSalonDao {
             vo.setIdLayanan(resultSet.getString("idLayanan"));
             vo.setNamaLayanan(resultSet.getString("namaLayanan"));
             vo.setJumlah(resultSet.getString("jumlah"));
+            vo.setTotalHarga(resultSet.getString("totalHarga"));
             return vo;
         });
         return vos;
