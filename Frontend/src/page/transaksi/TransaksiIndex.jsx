@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { listTransaksi, getTotalTransaksi } from "../../util/TransaksiService";
 import { formatDate } from "../../util/FormatDate";
+import {formatRupiah} from "../../util/FormatRupiah"
 
 export default function TransaksiIndex() {
   const [transaksis, setTransaksi] = useState([]);
@@ -38,7 +39,7 @@ export default function TransaksiIndex() {
           </Link>
         </div>
         <div className="col text-end">
-          <strong>Total Harga Pesanan : {totals}</strong>
+          <strong>Total Harga Pesanan : {formatRupiah(totals)}</strong>
         </div>
       </div>
 
@@ -60,9 +61,9 @@ export default function TransaksiIndex() {
                 <tr key={transaksi.idTransaksi}>
                   <td>{index + 1}</td>
                   <td>{transaksi.namaLayanan}</td>
-                  <td>{transaksi.hargaLayanan}</td>
+                  <td>{formatRupiah(transaksi.hargaLayanan)}</td>
                   <td>{transaksi.qty}</td>
-                  <td>{transaksi.total}</td>
+                  <td>{formatRupiah(transaksi.total)}</td>
                   <td>{formatDate(transaksi.tanggalTransaksi)}</td>
                 </tr>
               ))}
