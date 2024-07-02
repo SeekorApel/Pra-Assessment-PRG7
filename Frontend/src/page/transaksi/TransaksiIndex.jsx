@@ -38,7 +38,7 @@ export default function TransaksiIndex() {
           </Link>
         </div>
         <div className="col text-end">
-          <strong>Total Pesanan : {totals}</strong>
+          <strong>Total Harga Pesanan : {totals}</strong>
         </div>
       </div>
 
